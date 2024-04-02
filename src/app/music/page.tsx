@@ -1,6 +1,6 @@
 export default function Music() {
   return (
-    <main>
+    <main className="ml-28">
       <h1>Music</h1>
     </main>
   );

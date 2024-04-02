@@ -1,6 +1,6 @@
 export default function Settings() {
   return (
-    <main>
+    <main className="ml-28">
       <h1>Settings</h1>
     </main>
   );

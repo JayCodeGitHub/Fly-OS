@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main>
+    <main className="ml-28">
       <h1 className="text-red-500">Fly os</h1>
     </main>
   );
