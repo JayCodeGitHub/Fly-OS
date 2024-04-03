@@ -1,5 +1,6 @@
 export const NavigationItems = [
   {
+    color: "purple-500",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -19,6 +20,7 @@ export const NavigationItems = [
     path: "/",
   },
   {
+    color: "blue-500",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -39,6 +41,7 @@ export const NavigationItems = [
     path: "/music",
   },
   {
+    color: "orange-500",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -58,6 +61,7 @@ export const NavigationItems = [
     path: "/movies",
   },
   {
+    color: "yellow-500",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -76,6 +80,7 @@ export const NavigationItems = [
     path: "/games",
   },
   {
+    color: "sky-500",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -94,6 +99,7 @@ export const NavigationItems = [
     path: "/relax",
   },
   {
+    color: "gray-500",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
