@@ -12,7 +12,7 @@ export default function NavItem({
   return (
     <Link
       href={href}
-      className={`w-16 h-16 flex justify-center items-center rounded-lg bg-${color} `}
+      className={`w-16 h-16 flex justify-center items-center rounded-lg bg-${color} text-white`}
     >
       {icon}
     </Link>
