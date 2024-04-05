@@ -24,7 +24,7 @@ export default function NavItem({
   return (
     <Link
       href={href}
-      className={`w-16 h-16 flex justify-center items-center rounded-lg text-white hover:shadow-2xl transition-all duration-300 ease-in-out
+      className={`lg:w-16 lg:h-16 w-14 h-14 flex justify-center items-center rounded-lg text-white hover:shadow-2xl transition-all duration-300 ease-in-out
       ${colors.find((c) => c.name === color)?.color} 
       ${colors.find((c) => c.name === color)?.shadow}
       ${currentRoute === href ? `shadow-2xl` : "shadow-none"}`}
