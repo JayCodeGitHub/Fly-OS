@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import NavBar from "@/components/navbar";
 import Toolbar from "@/components/toolbar";
+import { Theme } from "@radix-ui/themes";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,9 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-gray-900 text-white">
-        <NavBar />
-        <Toolbar />
-        {children}
+        <Theme>
+          <NavBar />
+          <Toolbar />
+          {children}
+        </Theme>
       </body>
     </html>
   );
