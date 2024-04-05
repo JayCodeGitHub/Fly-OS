@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SpeakerLoudIcon, SpeakerOffIcon } from "@radix-ui/react-icons";
 import * as Slider from "@radix-ui/react-slider";
 import useStore from "@/state";
@@ -10,9 +10,24 @@ export default function VolumeSlider() {
   const [isActive, setIsActive] = useState(false);
   const toggleActive = () => setIsActive((prevValue) => !prevValue);
   const { volume, setVolume } = useStore((state) => state);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  });
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      wrapperRef.current &&
+      !wrapperRef.current.contains(event.target as Node)
+    ) {
+      setIsActive(false);
+    }
+  };
 
   return (
-    <div className="flex gap-4 items-center p-1">
+    <div className="flex gap-4 items-center p-1" ref={wrapperRef}>
       <SpeakerOffIcon className={`${isActive ? " visible" : "hidden"}`} />
       <motion.form
         animate={isActive ? { width: 200 } : { width: 0 }}
