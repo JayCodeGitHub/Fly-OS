@@ -9,7 +9,7 @@ export default function VolumeSlider() {
   return (
     <div className="flex gap-4 items-center">
       <SpeakerOffIcon />
-      <form>
+      <form className=" focus:outline outline-2">
         <Slider.Root
           className="relative flex items-center select-none touch-none w-[200px] h-5"
           defaultValue={[volume]}
@@ -21,7 +21,7 @@ export default function VolumeSlider() {
             <Slider.Range className="absolute bg-white rounded-full h-full" />
           </Slider.Track>
           <Slider.Thumb
-            className="block w-3 h-3 bg-white rounded-[10px] hover:bg-violet3 focus:outline-none"
+            className="block w-3 h-3 bg-white rounded-[10px] hover:bg-gray-200 transition-all focus:outline-none focus:shadow-[0_0_0_5px] focus:shadow-blackA3 focus:bg-gray-200"
             aria-label="Volume"
           />
         </Slider.Root>
