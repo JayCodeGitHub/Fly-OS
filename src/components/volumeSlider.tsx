@@ -2,15 +2,18 @@
 
 import { SpeakerLoudIcon, SpeakerOffIcon } from "@radix-ui/react-icons";
 import * as Slider from "@radix-ui/react-slider";
+import useStore from "@/state";
 
 export default function VolumeSlider() {
+  const { volume, setVolume } = useStore((state) => state);
   return (
     <div className="flex gap-4 items-center">
       <SpeakerOffIcon />
       <form>
         <Slider.Root
           className="relative flex items-center select-none touch-none w-[200px] h-5"
-          defaultValue={[50]}
+          defaultValue={[volume]}
+          onValueChange={(values) => setVolume(values[0])}
           max={100}
           step={1}
         >
