@@ -17,6 +17,9 @@ const config: Config = {
       colors: {
         ...blackA,
       },
+      height: {
+        restH: "calc(100vh - 7rem)",
+      },
     },
   },
   plugins: [],
