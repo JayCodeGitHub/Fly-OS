@@ -1,4 +1,5 @@
 import Switch from "@/components/switch";
+import VolumeSlider from "@/components/volumeSlider";
 
 export default function Settings() {
   return (
@@ -6,6 +7,7 @@ export default function Settings() {
       <section className="max-w-2xl w-full rounded-xl p-4 flex flex-col gap-4 bg-gray-600 shadow-lg shadow-gray-700">
         <h1 className=" text-xl text-center">Settings</h1>
         <Switch>Dark Mode</Switch>
+        <VolumeSlider />
       </section>
     </main>
   );
