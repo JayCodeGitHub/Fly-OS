@@ -1,5 +1,6 @@
 import Switch from "@/components/switch";
 import VolumeSlider from "@/components/volumeSlider";
+import Select from "@/components/select";
 
 export default function Settings() {
   return (
@@ -8,6 +9,7 @@ export default function Settings() {
         <h1 className=" text-xl text-center">Settings</h1>
         <Switch>Dark Mode</Switch>
         <VolumeSlider />
+        <Select />
       </section>
     </main>
   );
