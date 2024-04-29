@@ -12,21 +12,24 @@ import {
 } from "@radix-ui/react-select";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import SelectItem from "./selectItem";
+import useStore from "@/state";
 
 export default function Select({
-  placeholder,
   items,
 }: {
-  placeholder: string;
   items: { value: string; name: string }[];
 }) {
+  const { setFlight } = useStore();
   return (
-    <Root>
+    <Root
+      defaultValue={items[0].value}
+      onValueChange={(value: string) => setFlight(value)}
+    >
       <Trigger
         aria-label="Food"
         className="w-64 flex justify-end flex-row-reverse items-center gap-2 py-2 rounded-md cursor-pointer"
       >
-        <Value placeholder={placeholder} />
+        <Value />
         <Icon className="text-violet11">
           <ChevronDownIcon />
         </Icon>

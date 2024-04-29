@@ -10,7 +10,7 @@ export default function Settings() {
         <h1 className=" text-xl text-center">Settings</h1>
         <Switch>Dark Mode</Switch>
         <VolumeSlider />
-        <Select placeholder="Select a flight..." items={flights} />
+        <Select items={flights} />
       </section>
     </main>
   );
