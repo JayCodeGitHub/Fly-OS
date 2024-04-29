@@ -13,14 +13,20 @@ import {
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import SelectItem from "./selectItem";
 
-export default function Select() {
+export default function Select({
+  placeholder,
+  items,
+}: {
+  placeholder: string;
+  items: { value: string; name: string }[];
+}) {
   return (
     <Root>
       <Trigger
         aria-label="Food"
         className="w-64 flex justify-end flex-row-reverse items-center gap-2 py-2 rounded-md cursor-pointer"
       >
-        <Value placeholder="Select a flight" />
+        <Value placeholder={placeholder} />
         <Icon className="text-violet11">
           <ChevronDownIcon />
         </Icon>
@@ -29,11 +35,11 @@ export default function Select() {
         <Content className="overflow-hidden bg-gray-500 rounded-md z-10">
           <Viewport>
             <Group>
-              <SelectItem value="apple">London - New York</SelectItem>
-              <SelectItem value="banana">Berlin - London</SelectItem>
-              <SelectItem value="blueberry">New York - Los Angeles</SelectItem>
-              <SelectItem value="grapes">Dubai - Berlin</SelectItem>
-              <SelectItem value="pineapple">Los Angeles - Tokyo</SelectItem>
+              {items.map((item) => (
+                <SelectItem key={item.value} value={item.value}>
+                  {item.name}
+                </SelectItem>
+              ))}
             </Group>
           </Viewport>
         </Content>
